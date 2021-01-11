@@ -7,7 +7,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace eShopSolution.Data.Configuration
 {
-    class AppConfigConfiguration:IConventionEntityTypeBuilder<Cart>
+    class OrderConfiguration:IEntityTypeConfiguration<Order>
     {
+        public void Configure(EntityTypeBuilder<Order> builder)
+        {
+            builder.ToTable("Orders");
+            builder.HasKey(x => x.Id);
+            
+        }
     }
 }
