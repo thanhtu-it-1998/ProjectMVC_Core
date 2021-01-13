@@ -15,7 +15,7 @@ namespace eShopSolution.Data.EF
                 .Build();
             var connectionString = configuration.GetConnectionString("eShopSolutionDb");
             var optionsBuilder = new DbContextOptionsBuilder<EShopDbContext>();
-            optionsBuilder.UseSqlServer("Data Source=blog.db");
+            optionsBuilder.UseSqlServer(connectionString);
 
             return new EShopDbContext(optionsBuilder.Options);
         }

@@ -1,5 +1,5 @@
 {
   "ConnectionStrings": {
-    "eShopSolutionDb": "Server=.\\SQLEXPRESS;Database=eShopSolution.ConsoleApp.NewDb;User ID=sa;Password=sa;Trusted_Connection=True;"
+    "eShopSolutionDb": "Server=.\\SQLEXPRESS;Database=eShopSolution;User ID=sa;Password=sa;Trusted_Connection=True;"
   }
-}
+}g
