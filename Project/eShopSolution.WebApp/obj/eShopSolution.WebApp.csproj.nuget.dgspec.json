@@ -10,16 +10,12 @@
         "projectUniqueName": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.WebApp\\eShopSolution.WebApp.csproj",
         "projectName": "eShopSolution.WebApp",
         "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.WebApp\\eShopSolution.WebApp.csproj",
-        "packagesPath": "C:\\Users\\Truong Thanh Tu\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\ASUS PC\\.nuget\\packages\\",
         "outputPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.WebApp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Truong Thanh Tu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\ASUS PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -61,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
