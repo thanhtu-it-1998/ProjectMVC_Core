@@ -7,3 +7,6 @@ D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\obj\Deb
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\obj\Debug\netcoreapp3.1\eShopSolution.Application.csproj.CoreCompileInputs.cache
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\obj\Debug\netcoreapp3.1\eShopSolution.Application.dll
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\obj\Debug\netcoreapp3.1\eShopSolution.Application.pdb
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\bin\Debug\netcoreapp3.1\eShopSolution.Application.runtimeconfig.json
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\bin\Debug\netcoreapp3.1\eShopSolution.Application.runtimeconfig.dev.json
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\obj\Debug\netcoreapp3.1\eShopSolution.Application.genruntimeconfig.cache

@@ -10,8 +10,8 @@ using eShopSolution.Data.EF;
 namespace eShopSolution.Data.Migrations
 {
     [DbContext(typeof(EShopDbContext))]
-    [Migration("20210116130752_Initial")]
-    partial class Initial
+    [Migration("20210116152402_DBv1.1")]
+    partial class DBv11
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -177,7 +177,7 @@ namespace eShopSolution.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 1, 16, 20, 7, 51, 793, DateTimeKind.Local).AddTicks(2070));
+                        .HasDefaultValue(new DateTime(2021, 1, 16, 22, 24, 2, 21, DateTimeKind.Local).AddTicks(9039));
 
                     b.Property<string>("ShipAddress")
                         .IsRequired()
@@ -399,7 +399,7 @@ namespace eShopSolution.Data.Migrations
             modelBuilder.Entity("eShopSolution.Data.Entities.Cart", b =>
                 {
                     b.HasOne("eShopSolution.Data.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("Carts")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -410,7 +410,7 @@ namespace eShopSolution.Data.Migrations
             modelBuilder.Entity("eShopSolution.Data.Entities.CategoryTranslation", b =>
                 {
                     b.HasOne("eShopSolution.Data.Entities.Category", "Category")
-                        .WithMany()
+                        .WithMany("CategoryTranslations")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -469,7 +469,7 @@ namespace eShopSolution.Data.Migrations
                         .HasForeignKey("LanguageId");
 
                     b.HasOne("eShopSolution.Data.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("ProductTranslations")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -481,6 +481,8 @@ namespace eShopSolution.Data.Migrations
 
             modelBuilder.Entity("eShopSolution.Data.Entities.Category", b =>
                 {
+                    b.Navigation("CategoryTranslations");
+
                     b.Navigation("ProductCategories");
                 });
 
@@ -498,9 +500,13 @@ namespace eShopSolution.Data.Migrations
 
             modelBuilder.Entity("eShopSolution.Data.Entities.Product", b =>
                 {
+                    b.Navigation("Carts");
+
                     b.Navigation("OrderDetails");
 
                     b.Navigation("ProductCategories");
+
+                    b.Navigation("ProductTranslations");
                 });
 #pragma warning restore 612, 618
         }

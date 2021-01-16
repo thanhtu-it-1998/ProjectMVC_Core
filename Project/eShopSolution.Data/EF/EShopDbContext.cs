@@ -1,5 +1,6 @@
 ﻿using eShopSolution.Data.Configuration;
 using eShopSolution.Data.Entities;
+using eShopSolution.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using System;
@@ -16,18 +17,22 @@ namespace eShopSolution.Data.EF
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Configure using  Fluent APT
             modelBuilder.ApplyConfiguration(new AppConfigConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
             modelBuilder.ApplyConfiguration(new OrderDetailConfiguration());
+
+            //Data seeding
+            modelBuilder.Seed();
         }
 
         DbSet<Product> Products { get; set; }
         DbSet<AppConfig> AppConfigs { get; set; }
         DbSet<Cart> Carts  { get; set; }
-        DbSet<Category> Categorys { get; set; }
+        DbSet<Category> Categories { get; set; }
         DbSet<CategoryTranslation> CategoryTranslations { get; set; }
         DbSet<Contact> Contacts { get; set; }
         DbSet<Language> Languages  { get; set; }

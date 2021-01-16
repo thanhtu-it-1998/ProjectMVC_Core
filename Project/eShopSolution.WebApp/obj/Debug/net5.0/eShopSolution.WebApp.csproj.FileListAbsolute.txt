@@ -38,3 +38,4 @@ D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.WebApp\obj\Debug\ne
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.WebApp\obj\Debug\net5.0\eShopSolution.WebApp.pdb
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.WebApp\obj\Debug\net5.0\eShopSolution.WebApp.genruntimeconfig.cache
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.WebApp\obj\Debug\net5.0\eShopSolution.WebApp.csproj.CopyComplete
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.WebApp\bin\Debug\net5.0\web.config

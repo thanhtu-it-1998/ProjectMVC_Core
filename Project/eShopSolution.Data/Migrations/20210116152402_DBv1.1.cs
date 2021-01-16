@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace eShopSolution.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class DBv11 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable( 
+            migrationBuilder.CreateTable(
                 name: "AppConfigs",
                 columns: table => new
                 {
@@ -71,7 +71,7 @@ namespace eShopSolution.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 1, 16, 20, 7, 51, 793, DateTimeKind.Local).AddTicks(2070)),
+                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 1, 16, 22, 24, 2, 21, DateTimeKind.Local).AddTicks(9039)),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ShipName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     ShipAddress = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
