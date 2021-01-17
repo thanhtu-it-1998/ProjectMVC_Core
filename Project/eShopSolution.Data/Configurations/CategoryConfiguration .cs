@@ -6,7 +6,7 @@ using eShopSolution.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using eShopSolution.Data.Enums;
 
-namespace eShopSolution.Data.Configuration
+namespace eShopSolution.Data.Configurations
 {
     class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {

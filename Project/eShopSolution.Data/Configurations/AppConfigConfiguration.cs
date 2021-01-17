@@ -2,7 +2,7 @@
 using eShopSolution.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace eShopSolution.Data.Configuration
+namespace eShopSolution.Data.Configurations
 {
     class AppConfigConfiguration:IEntityTypeConfiguration<AppConfig>
     {
