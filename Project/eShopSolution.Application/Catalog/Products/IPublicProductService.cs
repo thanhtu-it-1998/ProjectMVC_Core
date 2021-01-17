@@ -1,5 +1,5 @@
-﻿using eShopSolution.Application.Catalog.Dtos;
-using eShopSolution.Application.Catalog.Products.Dtos;
+﻿using eShopSolution.Application.Dtos;
+using eShopSolution.Application.Catalog.Products.Dtos.Manage;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +8,6 @@ namespace eShopSolution.Application.Catalog.Products
 {
     public interface IPublicProductService
     {
-        public PageViewModel<ProductViewModel> GetAllByCategory(int categoryId, int pageIndex, int pageSize);
+        public PageResult<ProductViewModel> GetAllByCategory(GetProductPagingRequest request);
     }
 }
