@@ -5,7 +5,7 @@ using System.Text;
 
 namespace eShopSolution.Data.Entities
 {
-    class AppRole:IdentityRole<Guid>
+   public  class AppRole:IdentityRole<Guid>
     {
         public string Description { get; set; }
     }

@@ -5,7 +5,7 @@ using System.Transactions;
 
 namespace eShopSolution.Data.Entities
 {
-    class Transaction
+    public class Transaction
     {
         public int Id { set; get; }
         public DateTime TransactionDate { set; get; }

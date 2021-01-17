@@ -8,10 +8,9 @@ using Microsoft.EntityFrameworkCore.SqlServer;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
 namespace eShopSolution.Data.EF
 {
-    class EShopDbContext:IdentityDbContext<AppUser,AppRole,Guid>
+    public class EShopDbContext : IdentityDbContext<AppUser, AppRole, Guid>
     {
         public EShopDbContext(DbContextOptions options) : base(options)
         {
@@ -39,28 +38,28 @@ namespace eShopSolution.Data.EF
 
             modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
             modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRole").HasKey(p => new { p.RoleId, p.UserId });
-            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogin").HasKey(p=>p.UserId);
+            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogin").HasKey(p => p.UserId);
             modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserToken").HasKey(p => p.UserId);
             modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaim");
             //Data seeding
             modelBuilder.Seed();
         }
 
-        DbSet<Product> Products { get; set; }
-        DbSet<AppConfig> AppConfigs { get; set; }
-        DbSet<Cart> Carts  { get; set; }
-        DbSet<Category> Categories { get; set; }
-        DbSet<CategoryTranslation> CategoryTranslations { get; set; }
-        DbSet<Contact> Contacts { get; set; }
-        DbSet<Language> Languages  { get; set; }
-        DbSet<Order> Orders { get; set; }
-        DbSet<OrderDetail> OrderDetails { get; set; }
-        DbSet<ProductCategory> ProductCategorys { get; set; }
-        DbSet<ProductTranslation> ProductTranslations{ get; set; }
-        DbSet<Promotion> Promotions { get; set; }
-        DbSet<Transaction> Transactions { get; set; }
-        DbSet<AppUser> AppUsers { set; get; }
-        DbSet<AppRole> AppRoles { set; get; }
-    }   
+       public DbSet<Product> Products { get; set; }
+       public DbSet<AppConfig> AppConfigs { get; set; }
+       public DbSet<Cart> Carts { get; set; }
+       public DbSet<Category> Categories { get; set; }
+       public DbSet<CategoryTranslation> CategoryTranslations { get; set; }
+       public DbSet<Contact> Contacts { get; set; }
+       public DbSet<Language> Languages { get; set; }
+       public DbSet<Order> Orders { get; set; }
+       public DbSet<OrderDetail> OrderDetails { get; set; }
+       public DbSet<ProductCategory> ProductCategorys { get; set; }
+       public DbSet<ProductTranslation> ProductTranslations { get; set; }
+       public DbSet<Promotion> Promotions { get; set; }
+       public DbSet<Transaction> Transactions { get; set; }
+       public DbSet<AppUser> AppUsers { set; get; }
+       public DbSet<AppRole> AppRoles { set; get; }
+    }
 
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace eShopSolution.Data.Entities
 {
-    class ProductCategory
+    public class ProductCategory
     {
         public int ProductId { get; set; }
 

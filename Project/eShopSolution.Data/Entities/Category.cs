@@ -5,7 +5,7 @@ using System.Text;
 
 namespace eShopSolution.Data.Entities
 {
-    class Category
+ public    class Category
     {
         public int Id { get; set; }
         public int SortOrder { get; set; }
