@@ -3,7 +3,7 @@ using eShopSolution.Application.Catalog.Products.Dtos.Manage;
 using System;
 using eShopSolution.Data.EF;
 using System.Collections.Generic;
-using System.Text;
+using eShopSolution.Utilities.Exceptions;
 using eShopSolution.Data.Entities;
 using System.Threading.Tasks;
 
@@ -50,11 +50,11 @@ namespace eShopSolution.Application.Catalog.Products
             var product = await context.Products.FindAsync(productId);
             if(product == null)
             {
-                throw new NotImplementedException();
+                throw new EShopException($"Can't find a product:{productId}"  );
             }
             context.Products.Remove(product);
 
-            await context.SaveChangesAsync();
+           return await context.SaveChangesAsync();
         }
 
         public async Task<int> Update(ProductUpdateRequest request)
@@ -69,7 +69,7 @@ namespace eShopSolution.Application.Catalog.Products
 
         public async Task<PageResult<ProductViewModel>> GetAllPaging(GetProductPagingRequest request)
         {
-            throw new NotImplementedException();
+            var query = context.Products.where()
         }
 
         public Task<bool> UpdatePrice(int productId, decimal newPrice)
