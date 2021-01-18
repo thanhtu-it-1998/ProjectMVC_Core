@@ -15,3 +15,5 @@ D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\bin\Deb
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\obj\Debug\netcoreapp3.1\eShopSolution.Application.csproj.CopyComplete
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\bin\Debug\netcoreapp3.1\eShopSolution.Utilities.dll
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\bin\Debug\netcoreapp3.1\eShopSolution.Utilities.pdb
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\bin\Debug\netcoreapp3.1\eShopSolution.ViewModel.dll
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.Application\bin\Debug\netcoreapp3.1\eShopSolution.ViewModel.pdb

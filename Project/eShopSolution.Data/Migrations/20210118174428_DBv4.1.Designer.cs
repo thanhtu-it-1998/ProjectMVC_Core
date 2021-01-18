@@ -10,8 +10,8 @@ using eShopSolution.Data.EF;
 namespace eShopSolution.Data.Migrations
 {
     [DbContext(typeof(EShopDbContext))]
-    [Migration("20210117144307_DBv3.5")]
-    partial class DBv35
+    [Migration("20210118174428_DBv4.1")]
+    partial class DBv41
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -182,7 +182,7 @@ namespace eShopSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "d0185d85-c432-4200-9290-d98714042288",
+                            ConcurrencyStamp = "f57a0793-9b19-4d2b-81cf-519b938b6265",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -259,7 +259,7 @@ namespace eShopSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "73f3be2f-2c8e-4cc7-ab48-1b5616eb0e96",
+                            ConcurrencyStamp = "2e977342-10ed-4245-83f4-f27bda540601",
                             Dob = new DateTime(2021, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "truongthanhtu.it.1998@hotmail.com",
                             EmailConfirmed = true,
@@ -268,7 +268,7 @@ namespace eShopSolution.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "truongthanhtu.it.1998@hotmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPMBdqPt9eTHmI4+AvCONAoTo+vUtklM1eNzBv9zeILoCsBXKY4f2nqNIAOLCBLQAg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEC4mZTwZHLCGGZ2rsjVPnzJc+2w4D/HJQpZ0KepXr4180roAH/r0bI4kiV/80HnFeQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -512,7 +512,7 @@ namespace eShopSolution.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 1, 17, 21, 43, 5, 894, DateTimeKind.Local).AddTicks(9085));
+                        .HasDefaultValue(new DateTime(2021, 1, 19, 0, 44, 27, 299, DateTimeKind.Local).AddTicks(3794));
 
                     b.Property<string>("ShipAddress")
                         .IsRequired()
@@ -606,7 +606,7 @@ namespace eShopSolution.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2021, 1, 17, 21, 43, 5, 916, DateTimeKind.Local).AddTicks(4490),
+                            DateCreated = new DateTime(2021, 1, 19, 0, 44, 27, 332, DateTimeKind.Local).AddTicks(415),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
@@ -634,6 +634,45 @@ namespace eShopSolution.Data.Migrations
                             CategoryId = 1,
                             ProductId = 1
                         });
+                });
+
+            modelBuilder.Entity("eShopSolution.Data.Entities.ProductImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Caption")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("DateCreate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("FileSize")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<bool>("IsDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("eShopSolution.Data.Entities.ProductTranslation", b =>
@@ -878,6 +917,17 @@ namespace eShopSolution.Data.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("eShopSolution.Data.Entities.ProductImage", b =>
+                {
+                    b.HasOne("eShopSolution.Data.Entities.Product", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("eShopSolution.Data.Entities.ProductTranslation", b =>
                 {
                     b.HasOne("eShopSolution.Data.Entities.Language", "Language")
@@ -943,6 +993,8 @@ namespace eShopSolution.Data.Migrations
                     b.Navigation("OrderDetails");
 
                     b.Navigation("ProductCategories");
+
+                    b.Navigation("ProductImages");
 
                     b.Navigation("ProductTranslations");
                 });

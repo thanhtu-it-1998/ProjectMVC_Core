@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace eShopSolution.Data.Migrations
 {
-    public partial class DBv31 : Migration
+    public partial class DBv41 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -179,25 +179,6 @@ namespace eShopSolution.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Orders",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 1, 17, 21, 20, 54, 636, DateTimeKind.Local).AddTicks(3269)),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ShipName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    ShipAddress = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    ShipEmail = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    ShipPhoneNumber = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Orders", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Products",
                 columns: table => new
                 {
@@ -237,6 +218,31 @@ namespace eShopSolution.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Orders",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 1, 19, 0, 44, 27, 299, DateTimeKind.Local).AddTicks(3794)),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ShipName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    ShipAddress = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    ShipEmail = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    ShipPhoneNumber = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Orders", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Orders_AppUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Transactions",
                 columns: table => new
                 {
@@ -249,11 +255,18 @@ namespace eShopSolution.Data.Migrations
                     Result = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    Provider = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Provider = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Transactions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Transactions_AppUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -302,33 +315,13 @@ namespace eShopSolution.Data.Migrations
                 {
                     table.PrimaryKey("PK_Carts", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Carts_AppUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Carts_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "OrderDetails",
-                columns: table => new
-                {
-                    OrderId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_OrderDetails", x => new { x.ProductId, x.OrderId });
-                    table.ForeignKey(
-                        name: "FK_OrderDetails_Orders_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "Orders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_OrderDetails_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
@@ -353,6 +346,31 @@ namespace eShopSolution.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ProductCategories_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductImages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    ImagePath = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Caption = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    IsDefault = table.Column<bool>(type: "bit", nullable: false),
+                    DateCreate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SortOrder = table.Column<int>(type: "int", nullable: false),
+                    FileSize = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductImages", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProductImages_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
@@ -391,6 +409,32 @@ namespace eShopSolution.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "OrderDetails",
+                columns: table => new
+                {
+                    OrderId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderDetails", x => new { x.ProductId, x.OrderId });
+                    table.ForeignKey(
+                        name: "FK_OrderDetails_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_OrderDetails_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AppConfigs",
                 columns: new[] { "Key", "Value" },
@@ -400,6 +444,21 @@ namespace eShopSolution.Data.Migrations
                     { "HomeKeyword", "This is keyword of eShopSolution" },
                     { "HomeDescription", "This is description of eShopSolution" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "AppRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
+                values: new object[] { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "f57a0793-9b19-4d2b-81cf-519b938b6265", "Administrator role", "admin", "admin" });
+
+            migrationBuilder.InsertData(
+                table: "AppUserRole",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), new Guid("69bd714f-9576-45ba-b5b7-f00649be00de") });
+
+            migrationBuilder.InsertData(
+                table: "AppUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Dob", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "2e977342-10ed-4245-83f4-f27bda540601", new DateTime(2021, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), "truongthanhtu.it.1998@hotmail.com", true, "Thanh Tu", "Truong", false, null, "truongthanhtu.it.1998@hotmail.com", "admin", "AQAAAAEAACcQAAAAEC4mZTwZHLCGGZ2rsjVPnzJc+2w4D/HJQpZ0KepXr4180roAH/r0bI4kiV/80HnFeQ==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
@@ -422,7 +481,7 @@ namespace eShopSolution.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "DateCreated", "OriginalPrice", "Price", "SeoAlias" },
-                values: new object[] { 1, new DateTime(2021, 1, 17, 21, 20, 54, 656, DateTimeKind.Local).AddTicks(1336), 100000m, 200000m, null });
+                values: new object[] { 1, new DateTime(2021, 1, 19, 0, 44, 27, 332, DateTimeKind.Local).AddTicks(415), 100000m, 200000m, null });
 
             migrationBuilder.InsertData(
                 table: "CategoryTranslations",
@@ -455,6 +514,11 @@ namespace eShopSolution.Data.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Carts_UserId",
+                table: "Carts",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CategoryTranslations_CategoryId",
                 table: "CategoryTranslations",
                 column: "CategoryId");
@@ -470,8 +534,18 @@ namespace eShopSolution.Data.Migrations
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Orders_UserId",
+                table: "Orders",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ProductCategories_ProductId",
                 table: "ProductCategories",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductImages_ProductId",
+                table: "ProductImages",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
@@ -483,6 +557,11 @@ namespace eShopSolution.Data.Migrations
                 name: "IX_ProductTranslations_ProductId",
                 table: "ProductTranslations",
                 column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Transactions_UserId",
+                table: "Transactions",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -506,9 +585,6 @@ namespace eShopSolution.Data.Migrations
                 name: "AppUserRole");
 
             migrationBuilder.DropTable(
-                name: "AppUsers");
-
-            migrationBuilder.DropTable(
                 name: "AppUserToken");
 
             migrationBuilder.DropTable(
@@ -525,6 +601,9 @@ namespace eShopSolution.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "ProductCategories");
+
+            migrationBuilder.DropTable(
+                name: "ProductImages");
 
             migrationBuilder.DropTable(
                 name: "ProductTranslations");
@@ -546,6 +625,9 @@ namespace eShopSolution.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "AppUsers");
         }
     }
 }
