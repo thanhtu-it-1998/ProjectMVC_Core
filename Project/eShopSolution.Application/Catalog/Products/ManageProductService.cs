@@ -100,7 +100,7 @@ namespace eShopSolution.Application.Catalog.Products
         }
 
 
-        public async Task<PageResult<ProductViewModel>> GetAllPaging(GetProductPagingRequest request)
+        public async Task<PageResult<ProductViewModel>> GetAllPaging(GetProductPagingRequestManage request)
         {
             var query = from p in context.Products
                         join pt in context.ProductTranslations on p.Id equals pt.ProductId
