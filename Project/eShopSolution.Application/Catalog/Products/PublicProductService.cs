@@ -10,12 +10,39 @@ using eShopSolution.ViewModel.Catalog.Product.Public;
 
 namespace eShopSolution.Application.Catalog.Products
 {
-    class PublicProductService : IPublicProductService
+    public class PublicProductService : IPublicProductService
     {
         public readonly EShopDbContext context;
         public PublicProductService(EShopDbContext _context)
         {
             context = _context;
+        }
+
+        public async Task<List<ProductViewModel>> GetAll()
+        {
+            var query = from p in context.Products
+                        join pt in context.ProductTranslations on p.Id equals pt.ProductId
+                        join pc in context.ProductCategorys on p.Id equals pc.ProductId
+                        join c in context.Categories on p.Id equals c.Id
+                        select new { p, pt, pc };
+
+            var data = await query.Select(x => new ProductViewModel()
+            {
+                Id = x.p.Id,
+                Name = x.pt.Name,
+                DateCreated = x.p.DateCreated,
+                Description = x.pt.Description,
+                Details = x.pt.Details,
+                LanguageId = x.pt.LanguageId,
+                OriginalPrice = x.p.OriginalPrice,
+                Price = x.p.Price,
+                SeoAlias = x.pt.SeoAlias,
+                SeoDescription = x.pt.SeoDescription,
+                SeoTitle = x.pt.SeoTitle,
+                Stock = x.p.Stock,
+                ViewCount = x.p.ViewCount
+            }).ToListAsync();
+            return data;
         }
 
         public async Task<PageResult<ProductViewModel>> GetAllByCategory(GetProductPagingRequestPublic request)
@@ -56,7 +83,6 @@ namespace eShopSolution.Application.Catalog.Products
             {
                 TotalRecord = totalRow,
                 Items = data,
-
             };
             return pageResult;
         }

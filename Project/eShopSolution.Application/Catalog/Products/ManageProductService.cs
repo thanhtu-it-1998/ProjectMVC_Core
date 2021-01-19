@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using eShopSolution.Data.EF;
 using System.Collections.Generic;
 using eShopSolution.Utilities.Exceptions;
@@ -248,18 +247,18 @@ namespace eShopSolution.Application.Catalog.Products
             return await context.SaveChangesAsync() > 0;
         }
 
-        public Task<List<ProductImageViewModel>> GetListImage(int productId)
+        public  async Task<List<ProductImageViewModel>> GetListImage(int productId)
         {
-            var images = context.ProductImages.Where(p => p.ProductId == productId)
+            var images =  await context.ProductImages.Where(p => p.ProductId == productId)
                 .Select(p=> new ProductImageViewModel()
                 {
                     File = p.FileSize,
                     FilePath=p.ImagePath,
                     Id= p.Id,
                     IsDefault=p.IsDefault,
-                }).ToList();
+                }).ToListAsync();
             
-            return Task.FromResult(images);
+            return images;
 
         }
     }

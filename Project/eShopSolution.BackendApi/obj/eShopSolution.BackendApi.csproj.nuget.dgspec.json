@@ -1,0 +1,373 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.BackendApi\\eShopSolution.BackendApi.csproj": {}
+  },
+  "projects": {
+    "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Application\\eShopSolution.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Application\\eShopSolution.Application.csproj",
+        "projectName": "eShopSolution.Application",
+        "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Application\\eShopSolution.Application.csproj",
+        "packagesPath": "C:\\Users\\ASUS PC\\.nuget\\packages\\",
+        "outputPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ASUS PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Data\\eShopSolution.Data.csproj": {
+                "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Data\\eShopSolution.Data.csproj"
+              },
+              "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Utilities\\eShopSolution.Utilities.csproj": {
+                "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Utilities\\eShopSolution.Utilities.csproj"
+              },
+              "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.ViewModel\\eShopSolution.ViewModel.csproj": {
+                "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.ViewModel\\eShopSolution.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.AspNetCore.Mvc.RazorPages": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.BackendApi\\eShopSolution.BackendApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.BackendApi\\eShopSolution.BackendApi.csproj",
+        "projectName": "eShopSolution.BackendApi",
+        "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.BackendApi\\eShopSolution.BackendApi.csproj",
+        "packagesPath": "C:\\Users\\ASUS PC\\.nuget\\packages\\",
+        "outputPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.BackendApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ASUS PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Application\\eShopSolution.Application.csproj": {
+                "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Application\\eShopSolution.Application.csproj"
+              },
+              "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Data\\eShopSolution.Data.csproj": {
+                "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Data\\eShopSolution.Data.csproj"
+              },
+              "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Utilities\\eShopSolution.Utilities.csproj": {
+                "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Utilities\\eShopSolution.Utilities.csproj"
+              },
+              "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.ViewModel\\eShopSolution.ViewModel.csproj": {
+                "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.ViewModel\\eShopSolution.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Data\\eShopSolution.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Data\\eShopSolution.Data.csproj",
+        "projectName": "eShopSolution.Data",
+        "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Data\\eShopSolution.Data.csproj",
+        "packagesPath": "C:\\Users\\ASUS PC\\.nuget\\packages\\",
+        "outputPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ASUS PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Utilities\\eShopSolution.Utilities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Utilities\\eShopSolution.Utilities.csproj",
+        "projectName": "eShopSolution.Utilities",
+        "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Utilities\\eShopSolution.Utilities.csproj",
+        "packagesPath": "C:\\Users\\ASUS PC\\.nuget\\packages\\",
+        "outputPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.Utilities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ASUS PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.ViewModel\\eShopSolution.ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.ViewModel\\eShopSolution.ViewModel.csproj",
+        "projectName": "eShopSolution.ViewModel",
+        "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.ViewModel\\eShopSolution.ViewModel.csproj",
+        "packagesPath": "C:\\Users\\ASUS PC\\.nuget\\packages\\",
+        "outputPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\Project\\eShopSolution.ViewModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ASUS PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
