@@ -5,6 +5,8 @@ using eShopSolution.ViewModel.Catalog.Product.Public;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
 
 namespace eShopSolution.Application.Catalog.Products
 {
@@ -17,7 +19,7 @@ namespace eShopSolution.Application.Catalog.Products
         Task<bool> UpdatePrice(int productId, decimal newPrice);
         Task AddViewCount(int productId);
         Task<bool> UpdateStock(int productId, int addedQuantity);
-        Task<bool> AddImage(int productId, List<FormFile> file);
+        Task<bool> AddImage(int productId, FormFile file);
         Task<bool> RomoveImage(int imageId);
         Task<bool> UpdateImage(int imageId,string caption,bool isDefault);
         Task<PageResult<ProductViewModel>> GetAllPaging(GetProductPagingRequestManage request);

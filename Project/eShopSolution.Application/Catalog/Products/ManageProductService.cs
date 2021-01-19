@@ -9,12 +9,12 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using eShopSolution.ViewModel.Catalog.Product.Manage;
 using eShopSolution.ViewModel.Catalog.Product;
-using eShopSolution.ViewModel.Catalog.Common;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http.Headers;
 using System.IO;
 using eShopSolution.Application.Common;
 using eShopSolution.ViewModel.Catalog.Product.Public;
+using eShopSolution.ViewModel.Catalog.Common;
 
 namespace eShopSolution.Application.Catalog.Products
 {
@@ -81,9 +81,9 @@ namespace eShopSolution.Application.Catalog.Products
                 throw new EShopException($"Can't find a product:{productId}");
             }
 
-            var images = context.ProductImages.Where(i=>i.ProductId  == productId);
+            var images = context.ProductImages.Where(i => i.ProductId == productId);
 
-           foreach(var i in images)
+            foreach (var i in images)
             {
                 await storageService.DeleteFileAsync(i.ImagePath);
             }
@@ -206,24 +206,61 @@ namespace eShopSolution.Application.Catalog.Products
             return fileName;
         }
 
-        public Task<bool> AddImage(int productId, List<FormFile> file)
+        public async Task<bool> AddImage(int productId, FormFile file)
         {
-            throw new NotImplementedException();
+            if (file == null) throw new EShopException($"File image null");
+            var productImage = new ProductImage()
+            {
+                ProductId = productId,
+                Caption = "Thumbnail image",
+                DateCreate = DateTime.Now,
+                FileSize = file.Length,
+                ImagePath = await this.SaveFile(file),
+                IsDefault = true,
+                SortOrder = 1
+            };
+            context.ProductImages.Add(productImage);
+            return await context.SaveChangesAsync() > 0;
         }
 
-        public Task<bool> RomoveImage(int imageId)
+        public async Task<bool> RomoveImage(int imageId)
         {
-            throw new NotImplementedException();
+            var image = await context.ProductImages.FindAsync(imageId);
+            if (image != null)
+            {
+                throw new EShopException($"Can not find image with id:{imageId}");
+            }
+            await storageService.DeleteFileAsync(image.ImagePath);
+            context.ProductImages.Remove(image);
+            return await context.SaveChangesAsync() > 0;
+
         }
 
-        public Task<bool> UpdateImage(int imageId, string caption, bool isDefault)
+        public async Task<bool> UpdateImage(int imageId, string caption, bool isDefault)
         {
-            throw new NotImplementedException();
+            var image = await context.ProductImages.FindAsync(imageId);
+
+            if (image != null)
+                throw new EShopException($"Can not find image with id:{imageId}");
+            image.Caption = caption;
+            image.IsDefault = isDefault;
+
+            return await context.SaveChangesAsync() > 0;
         }
 
         public Task<List<ProductImageViewModel>> GetListImage(int productId)
         {
-            throw new NotImplementedException();
+            var images = context.ProductImages.Where(p => p.ProductId == productId)
+                .Select(p=> new ProductImageViewModel()
+                {
+                    File = p.FileSize,
+                    FilePath=p.ImagePath,
+                    Id= p.Id,
+                    IsDefault=p.IsDefault,
+                }).ToList();
+            
+            return Task.FromResult(images);
+
         }
     }
 }
