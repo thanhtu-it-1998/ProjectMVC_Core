@@ -69,9 +69,9 @@ namespace eShopSolution.Application.Catalog.Products
 
             context.Products.Add(product);
 
-            return await context.SaveChangesAsync();
+             await context.SaveChangesAsync();
+            return product.Id; 
         }
-
         public async Task<int> Delete(int productId)
         {
             var product = await context.Products.FindAsync(productId);
@@ -90,7 +90,6 @@ namespace eShopSolution.Application.Catalog.Products
 
             return await context.SaveChangesAsync();
         }
-
         public async Task<int> Update(ProductUpdateRequest request)
         {
             var product = await context.Products.FindAsync(request.Id);
@@ -122,7 +121,6 @@ namespace eShopSolution.Application.Catalog.Products
             return await context.SaveChangesAsync();
 
         }
-
         public async Task<bool> UpdatePrice(int productId, decimal newPrice)
         {
             var product = await context.Products.FindAsync(productId);
@@ -141,8 +139,6 @@ namespace eShopSolution.Application.Catalog.Products
             return await context.SaveChangesAsync() > 0;
 
         }
-
-
         public async Task<PageResult<ProductViewModel>> GetAllPaging(GetProductPagingRequestManage request)
         {
             var query = from p in context.Products
@@ -189,8 +185,6 @@ namespace eShopSolution.Application.Catalog.Products
             };
             return pageResult;
         }
-
-
         public async Task AddViewCount(int productId)
         {
             var product = await context.Products.FindAsync(productId);
@@ -204,7 +198,6 @@ namespace eShopSolution.Application.Catalog.Products
             await storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return fileName;
         }
-
         public async Task<bool> AddImage(int productId, FormFile file)
         {
             if (file == null) throw new EShopException($"File image null");
@@ -221,7 +214,6 @@ namespace eShopSolution.Application.Catalog.Products
             context.ProductImages.Add(productImage);
             return await context.SaveChangesAsync() > 0;
         }
-
         public async Task<bool> RomoveImage(int imageId)
         {
             var image = await context.ProductImages.FindAsync(imageId);
@@ -234,7 +226,6 @@ namespace eShopSolution.Application.Catalog.Products
             return await context.SaveChangesAsync() > 0;
 
         }
-
         public async Task<bool> UpdateImage(int imageId, string caption, bool isDefault)
         {
             var image = await context.ProductImages.FindAsync(imageId);
@@ -246,7 +237,6 @@ namespace eShopSolution.Application.Catalog.Products
 
             return await context.SaveChangesAsync() > 0;
         }
-
         public  async Task<List<ProductImageViewModel>> GetListImage(int productId)
         {
             var images =  await context.ProductImages.Where(p => p.ProductId == productId)
@@ -261,5 +251,10 @@ namespace eShopSolution.Application.Catalog.Products
             return images;
 
         }
+        public Task<ProductViewModel> GetById(int ProductId)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

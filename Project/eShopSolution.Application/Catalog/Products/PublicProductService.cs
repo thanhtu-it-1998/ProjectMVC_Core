@@ -45,7 +45,7 @@ namespace eShopSolution.Application.Catalog.Products
             return data;
         }
 
-        public async Task<PageResult<ProductViewModel>> GetAllByCategory(GetProductPagingRequestPublic request)
+        public async Task<PageResult<ProductViewModel>> GetAllByCategoryID(GetProductPagingRequestPublic request)
         {
             var query = from p in context.Products
                         join pt in context.ProductTranslations on p.Id equals pt.ProductId

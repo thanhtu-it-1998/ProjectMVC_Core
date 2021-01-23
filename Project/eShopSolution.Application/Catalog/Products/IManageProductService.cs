@@ -20,9 +20,12 @@ namespace eShopSolution.Application.Catalog.Products
         Task<bool> UpdateStock(int productId, int addedQuantity);
         Task<bool> AddImage(int productId, FormFile file);
         Task<bool> RomoveImage(int imageId);
+        Task<ProductViewModel> GetById(int ProductId);
         Task<bool> UpdateImage(int imageId,string caption,bool isDefault);
         Task<PageResult<ProductViewModel>> GetAllPaging(GetProductPagingRequestManage request);
         Task<List<ProductImageViewModel>> GetListImage(int productId);
+
+
 
     }
 }
