@@ -1,9 +1,0 @@
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.ViewModel\bin\Debug\netcoreapp3.1\eShopSolution.ViewModel.deps.json
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.ViewModel\bin\Debug\netcoreapp3.1\eShopSolution.ViewModel.dll
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.ViewModel\bin\Debug\netcoreapp3.1\eShopSolution.ViewModel.pdb
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.ViewModel\obj\Debug\netcoreapp3.1\eShopSolution.ViewModel.csprojAssemblyReference.cache
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.ViewModel\obj\Debug\netcoreapp3.1\eShopSolution.ViewModel.AssemblyInfoInputs.cache
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.ViewModel\obj\Debug\netcoreapp3.1\eShopSolution.ViewModel.AssemblyInfo.cs
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.ViewModel\obj\Debug\netcoreapp3.1\eShopSolution.ViewModel.csproj.CoreCompileInputs.cache
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.ViewModel\obj\Debug\netcoreapp3.1\eShopSolution.ViewModel.dll
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\Project\eShopSolution.ViewModel\obj\Debug\netcoreapp3.1\eShopSolution.ViewModel.pdb
