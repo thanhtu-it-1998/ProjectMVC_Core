@@ -7,3 +7,10 @@ D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Application\o
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Application\obj\Debug\netcoreapp3.1\eShopSolution.Application.csproj.CoreCompileInputs.cache
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Application\obj\Debug\netcoreapp3.1\eShopSolution.Application.dll
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Application\obj\Debug\netcoreapp3.1\eShopSolution.Application.pdb
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Application\bin\Debug\netcoreapp3.1\eShopSolution.Data.dll
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Application\bin\Debug\netcoreapp3.1\Utilities.dll
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Application\bin\Debug\netcoreapp3.1\ViewModels.dll
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Application\bin\Debug\netcoreapp3.1\eShopSolution.Data.pdb
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Application\bin\Debug\netcoreapp3.1\Utilities.pdb
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Application\bin\Debug\netcoreapp3.1\ViewModels.pdb
+D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Application\obj\Debug\netcoreapp3.1\eShopSolution.Application.csproj.CopyComplete
