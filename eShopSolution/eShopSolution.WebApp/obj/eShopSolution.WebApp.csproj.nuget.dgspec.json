@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS PC\\source\\repos\\eShopSolution\\eShopSolution.WebApp\\eShopSolution.WebApp.csproj": {}
+    "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\eShopSolution\\eShopSolution.WebApp\\eShopSolution.WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS PC\\source\\repos\\eShopSolution\\eShopSolution.WebApp\\eShopSolution.WebApp.csproj": {
+    "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\eShopSolution\\eShopSolution.WebApp\\eShopSolution.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS PC\\source\\repos\\eShopSolution\\eShopSolution.WebApp\\eShopSolution.WebApp.csproj",
+        "projectUniqueName": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\eShopSolution\\eShopSolution.WebApp\\eShopSolution.WebApp.csproj",
         "projectName": "eShopSolution.WebApp",
-        "projectPath": "C:\\Users\\ASUS PC\\source\\repos\\eShopSolution\\eShopSolution.WebApp\\eShopSolution.WebApp.csproj",
+        "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\eShopSolution\\eShopSolution.WebApp\\eShopSolution.WebApp.csproj",
         "packagesPath": "C:\\Users\\ASUS PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS PC\\source\\repos\\eShopSolution\\eShopSolution.WebApp\\obj\\",
+        "outputPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\eShopSolution\\eShopSolution.WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -43,6 +43,22 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

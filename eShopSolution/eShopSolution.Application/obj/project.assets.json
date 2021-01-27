@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ASUS PC\\source\\repos\\eShopSolution\\eShopSolution.Application\\eShopSolution.Application.csproj",
+      "projectUniqueName": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\eShopSolution\\eShopSolution.Application\\eShopSolution.Application.csproj",
       "projectName": "eShopSolution.Application",
-      "projectPath": "C:\\Users\\ASUS PC\\source\\repos\\eShopSolution\\eShopSolution.Application\\eShopSolution.Application.csproj",
+      "projectPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\eShopSolution\\eShopSolution.Application\\eShopSolution.Application.csproj",
       "packagesPath": "C:\\Users\\ASUS PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ASUS PC\\source\\repos\\eShopSolution\\eShopSolution.Application\\obj\\",
+      "outputPath": "D:\\DotNet\\ASP.Net\\Tedu\\ProjectMVC_Core\\eShopSolution\\eShopSolution.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
