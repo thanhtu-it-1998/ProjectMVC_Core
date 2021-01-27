@@ -2,11 +2,3 @@ D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Data\obj\Debu
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Data\obj\Debug\netcoreapp3.1\eShopSolution.Data.AssemblyInfoInputs.cache
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Data\obj\Debug\netcoreapp3.1\eShopSolution.Data.AssemblyInfo.cs
 D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Data\obj\Debug\netcoreapp3.1\eShopSolution.Data.csproj.CoreCompileInputs.cache
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Data\bin\Debug\netcoreapp3.1\eShopSolution.Data.deps.json
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Data\bin\Debug\netcoreapp3.1\eShopSolution.Data.runtimeconfig.json
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Data\bin\Debug\netcoreapp3.1\eShopSolution.Data.runtimeconfig.dev.json
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Data\bin\Debug\netcoreapp3.1\eShopSolution.Data.dll
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Data\bin\Debug\netcoreapp3.1\eShopSolution.Data.pdb
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Data\obj\Debug\netcoreapp3.1\eShopSolution.Data.dll
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Data\obj\Debug\netcoreapp3.1\eShopSolution.Data.pdb
-D:\DotNet\ASP.Net\Tedu\ProjectMVC_Core\eShopSolution\eShopSolution.Data\obj\Debug\netcoreapp3.1\eShopSolution.Data.genruntimeconfig.cache
